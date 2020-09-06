@@ -1,3 +1,9 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-SRC_URI += "https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/5.4/older/patch-5.4.3-rt1.patch.gz;name=rtpatch"
-SRC_URI[rtpatch.sha256sum] = "6b92ba32c7ce30919c9b66e49e5f1dce58e1f8bd92fef91e548d6f2d434a2b39"
+
+SRC_URI_append = " \
+   file://5.4/5.4.31/0002-initial-modifications.patch \
+   file://5.4/5.4.31/0003-modified-dt-and-ad1938-drivers-machine-drivers.patch \
+   "
+
+KERNEL_CONFIG_FRAGMENTS_append += "${WORKDIR}/fragments/5.4/ad1938_card_activate.config"
+SRC_URI_append = " file://5.4/ad1938_card_activate.config;subdir=fragments "
