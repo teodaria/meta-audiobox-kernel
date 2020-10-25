@@ -1,6 +1,6 @@
 # meta-audiobox-kernel
 
-This layer contains the patches which enables the correct initialization and use of the MP1AudioBox additional board.
+This layer contains the patches to enable the correct initialization and use of the MP1AudioBox additional board.
 It's based on the Standard OE/Yocto [BSP layer from STMicroelectronics](https://github.com/STMicroelectronics/meta-st-stm32mp) 
 and includes the kernel patch for:
   * AD1938 ASoC codec driver modifications 
